@@ -2,6 +2,9 @@
 
 # GitHub Pull Requests Explorer
 
+![React](https://img.shields.io/badge/ReactJS-16.11.0-%2300b3e6)
+![Styled-Components](<https://img.shields.io/badge/styled--components-4.4.1-rgb(219%2C%20112%2C%20147)>)
+
 SPA feito em ReactJS para visualizar _pull requests_ de repositórios publicos.
 
 ## Instalação
