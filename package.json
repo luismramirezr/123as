@@ -1,10 +1,11 @@
 {
   "name": "github-pullrequest",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
     "customize-cra": "^0.8.0",
+    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-autosuggest": "^9.4.3",

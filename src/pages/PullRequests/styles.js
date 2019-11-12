@@ -242,3 +242,37 @@ export const OpenButton = styled.button.attrs({
     }
   }
 `;
+
+export const Empty = styled.div`
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #aaa;
+  p {
+    padding: 25px 0;
+  }
+  img {
+    max-height: 250px;
+  }
+`;
+
+export const Error = styled.div`
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #ff4757;
+  p {
+    padding: 25px 0;
+  }
+  img {
+    max-height: 250px;
+  }
+`;

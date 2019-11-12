@@ -23,6 +23,7 @@ export const Container = styled.div`
     font-size: 24px;
     font-weight: 300;
     letter-spacing: 0.5px;
+    margin-bottom: 25px;
     svg {
       margin-right: 10px;
     }
@@ -30,18 +31,12 @@ export const Container = styled.div`
       font-weight: 600;
     }
   }
-
-  span {
-    font-size: 12px;
-    color: #ff4757;
-  }
 `;
 
 export const Form = styled.form`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 25px;
 `;
 
 export const SubmitButton = styled.button.attrs({
@@ -212,5 +207,24 @@ export const GoButton = styled.button.attrs({
 
   &:hover {
     background-color: #27ae60;
+  }
+`;
+
+export const Error = styled.div`
+  font-size: 12px;
+  color: #ff4757;
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 18px; */
+  /* color: #aaa; */
+  p {
+    padding: 25px 0;
+  }
+  img {
+    max-height: 250px;
   }
 `;
