@@ -30,12 +30,15 @@ Ao acessar o repositório, é possível visualizar a lista de _Pull Requests_ ab
 
 ## Implementações Futuras
 
-- Procurar inicialmente por proprietários no lugar de repositórios
-- Procurar por repositórios do proprietário digitado ao inserir `/` após o nome do proprietário
-- Implementar processamento de erros da API (_ex, repositório não encontrado, quota excedida, etc_)
 - Implementar sistema de autenticação para aumento da quota de requisições da API e visualização de repositórios privados
 
 ## Changelog
+
+### 1.1.0 (12/11/2019)
+
+- Implementado procura por proripetários com repositórios no lugar de repositórios diretamente
+- Implementado listagem de repositórios dos usuários
+- Implementado processamento de erros da API
 
 ### 1.0.0 (11/11/2019)
 
