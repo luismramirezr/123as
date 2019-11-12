@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="120" alt="GitHub">
 
-## Available Scripts
+# GitHub Pull Requests Explorer
 
-In the project directory, you can run:
+SPA feito em ReactJS para visualizar _pull requests_ de repositórios publicos.
 
-### `yarn start`
+## Instalação
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+git clone https://github.com/luismramirezr/github-pullrequests-explorer.git
+cd github-pullrequests-explorer
+yarn install
+yarn start
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Uso e Descrição
 
-### `yarn test`
+Digite o nome do proprietário do repositorio, seguido de _slash_ e o nome do repositório, por exemplo, `reacttraining/history`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Como a API Publica do GitHub limita 10 buscas por hora, ao digitar ao menos 4 caracteres, o SPA irá realizar um _request_ na API do GitHub procurando por repositórios utilizando esses caracteres. De uma forma ideal, poderia ser realizada a busca a cada carectere digitado.
 
-### `yarn build`
+Para reduzir o consumo da API, não são feitos _requests_ adicionais quando a resposta da API é incompleta (paginação). Ainda, foi implementado o uso de `localStorage` para armzenar os resultados das buscas.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Quando um repositório é acessado, este também é salvo no `localStorage` com informações básicas e reapresentado como Repositório Favorito.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Ao acessar o repositório, é possível visualizar a lista de _Pull Requests_ abertas, contendo informações básicas como o título, _labels_, o nome do usuário e o corpo da _Pull Request_, acessado ao expandir as informações básicas.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Implementações Futuras
 
-### `yarn eject`
+- Procurar inicialmente por proprietários no lugar de repositórios
+- Procurar por repositórios do proprietário digitado ao inserir `/` após o nome do proprietário
+- Implementar processamento de erros da API (_ex, repositório não encontrado, quota excedida, etc_)
+- Implementar sistema de autenticação para aumento da quota de requisições da API e visualização de repositórios privados
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Changelog
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1.0.0 (11/11/2019)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Distribuição inicial
