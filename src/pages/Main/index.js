@@ -72,6 +72,19 @@ export default function Main({ history }) {
       ]);
       return goTo(name, owner);
     } catch (err) {
+      if (err.response.data.message.includes('exceeded')) {
+        const resetDate = new Date(
+          Number(err.response.headers['x-ratelimit-reset'] * 1000)
+        );
+        setError(
+          `Quota excedida. Próximo reset: ${moment(resetDate).format(
+            'HH:mm:ss'
+          )}`
+        );
+      }
+      if (err.response.data.message.toLowerCase().includes('found')) {
+        setError('Repositório não encontrado.');
+      }
       console.error(err);
       return setLoading(false);
     }
@@ -104,6 +117,9 @@ export default function Main({ history }) {
             )}`
           );
         }
+        if (err.response.data.message.toLowerCase().includes('found')) {
+          setError('Usuário não encontrado.');
+        }
         console.error(error);
       }
     }
@@ -125,6 +141,9 @@ export default function Main({ history }) {
               'HH:mm:ss'
             )}`
           );
+        }
+        if (err.response.data.message.toLowerCase().includes('found')) {
+          setError('Repositório não encontrado.');
         }
         console.error(error);
       }
