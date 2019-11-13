@@ -34,6 +34,10 @@ Ao acessar o repositório, é possível visualizar a lista de _Pull Requests_ ab
 
 ## Changelog
 
+### 1.1.1 (13/11/2019)
+
+- Lida com os erros 404
+
 ### 1.1.0 (12/11/2019)
 
 - Implementado procura por proripetários com repositórios no lugar de repositórios diretamente

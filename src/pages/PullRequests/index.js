@@ -82,6 +82,10 @@ export default function Repository({ history, match }) {
               )}`
             );
           }
+          if (err.response.data.message.toLowerCase().includes('found')) {
+            setError('Repositório ou usuário não encontrado.');
+          }
+          setLoading(false);
           console.error(error);
         }
       }
@@ -120,7 +124,21 @@ export default function Repository({ history, match }) {
           })
         );
       } catch (err) {
-        console.error(err);
+        if (err.response.data.message.includes('exceeded')) {
+          const resetDate = new Date(
+            Number(err.response.headers['x-ratelimit-reset'] * 1000)
+          );
+          setError(
+            `Quota excedida. Próximo reset: ${moment(resetDate).format(
+              'HH:mm:ss'
+            )}`
+          );
+        }
+        if (err.response.data.message.toLowerCase().includes('found')) {
+          setError('Repositório ou usuário não encontrado.');
+        }
+        setLoading(false);
+        console.error(error);
       }
     })();
   }, []);
